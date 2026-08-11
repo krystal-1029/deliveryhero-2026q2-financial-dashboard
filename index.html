@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="zh-CN" data-dashboard-baseline="ifood-fy26">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Delivery Hero 财报看板</title>
+  <style>
+    :root{--bg:#f6efe7;--surface:#fffdf8;--surface-soft:#fbf4ea;--card:#fffcf7;--card-alt:#f8efe5;--ink:#171412;--muted:#5c5148;--muted-light:#8b7e73;--line:#e7d7c8;--line-strong:#d8b996;--orange:#f05a24;--orange-dark:#c9340a;--orange-soft:#fff0e3;--green:#00966b;--blue:#2f7890;--purple:#9b4fb3;--dark-card:#171412;--shadow:0 18px 45px rgba(70,45,20,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;min-width:320px;color:var(--ink);background:radial-gradient(circle at 92% 0%,rgba(240,90,36,.14),transparent 30rem),linear-gradient(135deg,#fffdf8 0%,#f7f1e9 52%,#eef8f4 100%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:inherit;text-decoration:none}nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:66px;padding:12px max(24px,calc(50vw - 620px));border-bottom:1px solid var(--line);background:rgba(255,253,248,.92);backdrop-filter:blur(14px)}.brand{display:flex;align-items:center;gap:10px;font-weight:900;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;color:#fff;background:var(--orange);box-shadow:0 10px 22px rgba(240,90,36,.22)}.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px}.nav-links a{color:var(--muted);border-radius:10px;padding:9px 10px;font-size:13px;font-weight:800}.nav-links a:hover{color:var(--orange-dark);background:var(--orange-soft)}main,footer{width:min(1240px,calc(100% - 48px));margin:auto}.hero{display:block;margin-top:18px;overflow:hidden;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,var(--surface) 0%,var(--card) 56%,var(--surface-soft) 100%);box-shadow:var(--shadow)}.hero-main{display:flex;flex-direction:column;justify-content:center;padding:50px 48px 42px}.eyebrow,.section-kicker,.data-label{color:var(--orange-dark);letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:900}h1{margin:14px 0 10px;font-size:clamp(38px,3.4vw,52px);line-height:1.05}h2{margin:8px 0;font-size:clamp(32px,4vw,48px);line-height:1.15}h3{margin:8px 0 14px;font-size:21px;line-height:1.35}p,li,.source-note{color:var(--muted);line-height:1.72}.hero-insights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:26px}.hero-insight{border:1px solid var(--line);border-radius:18px;padding:20px;background:rgba(255,255,255,.54)}.hero-insight .data-label{display:block}.hero-insight h3{margin:9px 0 10px;font-size:20px}.hero-insight p{margin:8px 0 0;font-size:14px;line-height:1.65}.hero-insight b{color:var(--ink)}.hero-main>p{margin:0;font-size:18px;color:var(--ink);font-weight:750;line-height:1.55}.hero ul{display:grid;gap:10px;margin:19px 0 0;padding-left:22px;font-size:15px}.fy-note{margin:12px 0 0;color:var(--muted-light);font-size:12px;line-height:1.6}.hero-side{display:flex;flex-direction:column;justify-content:space-between;gap:26px;padding:42px;color:var(--surface);background:linear-gradient(160deg,var(--dark-card) 0%,#2e211b 58%,#743518 100%)}.hero-side small{color:#ffd5c0;font-weight:800}.hero-side h2{margin:10px 0 8px;font-size:27px}.hero-side p{color:rgba(255,253,248,.74);margin:0;font-size:15px;line-height:1.72}.hero-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.hero-metrics div{min-height:96px;border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px;background:rgba(255,255,255,.08)}.hero-metrics strong{display:block;font-size:24px}.hero-metrics span{color:#f3d5c7;font-size:12px;line-height:1.45}section{padding-top:68px}.section-title{max-width:1120px;margin-bottom:24px}.section-title p{margin:0}.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card,.analysis,.chart-card,.terms article,.source-card{min-width:0;border:1px solid rgba(216,185,150,.55);border-radius:22px;background:var(--card);box-shadow:var(--shadow)}.card,.analysis,.chart-card,.terms article,.source-card{padding:22px}.chart-card{border-radius:24px;background:var(--surface)}.chart{display:block;width:100%;height:348px;min-height:250px}.chart-card.compact .chart{height:310px}.legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:8px;color:var(--muted);font-size:12px;font-weight:800}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}.source-note{margin:12px 0 0;font-size:11px}.forecast-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:13px}.forecast-note{margin:0;border-left:4px solid var(--orange);border-radius:13px;padding:11px 13px;background:var(--orange-soft);color:#6f4732;font-size:12px;line-height:1.62}.forecast-note.ubs{border-left-color:var(--blue);background:#edf6f8;color:#31545d}.chart-tooltip{position:fixed;z-index:50;display:none;max-width:min(340px,calc(100vw - 28px));border:1px solid var(--line);border-radius:14px;padding:10px 12px;color:var(--ink);background:rgba(255,253,248,.97);box-shadow:0 14px 35px rgba(70,45,20,.12);font-size:12px;line-height:1.55;white-space:pre-line;pointer-events:none}.analysis{color:var(--surface);border-color:rgba(216,185,150,.55);background:#2b241f}.analysis .data-label{color:#ffc1a3}.analysis h3{font-size:24px}.analysis-list{display:grid;gap:18px;margin-top:18px}.analysis-item{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:start;border-left:3px solid rgba(255,253,248,.32);padding:2px 18px 4px 20px}.analysis-item b{grid-column:1;grid-row:1;display:block;color:#fff;font-size:17px;line-height:1.45}.analysis-item p{grid-column:1/-1;margin:10px 0 0;color:#e6d9cf;font-size:14px;overflow-wrap:break-word}.view-label{display:inline-flex;grid-column:2;grid-row:1;align-items:center;border-radius:999px;padding:6px 10px;color:#ffd7c4;background:rgba(240,90,36,.18);font-size:11px;font-weight:900}.terms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.terms article{border-top:4px solid var(--orange)}.terms b,.source-card b{color:var(--orange-dark)}.terms p,.source-card p{margin:8px 0 0;font-size:12px;overflow-wrap:break-word}.source-card{min-height:225px;display:flex;flex-direction:column}.source-type{color:var(--orange-dark);font-size:12px;font-weight:900}.source-card b{margin-top:12px;color:var(--ink);font-size:22px;line-height:1.3}.source-card p{font-size:14px;line-height:1.65}.source-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:18px}.source-card a{display:inline-flex;align-items:center;gap:6px;width:fit-content;border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:var(--orange-dark);background:var(--surface);font-size:12px;font-weight:900}footer{display:flex;justify-content:space-between;gap:12px;margin-top:72px;padding:24px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}@media(max-width:1120px){.terms,.source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:940px){.hero,.grid-2{grid-template-columns:1fr}}@media(max-width:680px){main,footer{width:calc(100% - 28px)}nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.hero-main,.hero-side{padding:28px}.hero-insights{grid-template-columns:1fr}.forecast-cards{grid-template-columns:1fr}h1{font-size:38px}.terms,.source-grid,.hero-metrics{grid-template-columns:1fr}.chart{height:282px}.chart-card.compact .chart{height:255px}footer{flex-direction:column}}
+</style>
+<style>
+.hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.82fr);align-items:stretch;padding-top:0}
+.hero-main{align-self:stretch;padding:56px 48px 44px}
+.hero-side{align-self:stretch}
+.hero-main h1{margin-bottom:16px}
+.hero-main ul{max-width:780px;margin-top:22px;font-size:16px}
+.terms{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:940px){.hero{grid-template-columns:1fr}}
+@media(max-width:1120px){.terms{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.hero-main,.hero-side{padding:28px}}
+@media(max-width:680px){.terms{grid-template-columns:1fr}}
+.chart-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 12px}.chart-toolbar button{border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--muted);background:var(--surface-soft);font:inherit;font-size:12px;font-weight:900;cursor:pointer}.chart-toolbar button[aria-pressed="true"]{border-color:var(--orange);color:var(--orange-dark);background:var(--orange-soft)}
+</style>
+<style>
+.forecast-note{padding:13px 15px}.forecast-label{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.forecast-period{color:inherit;opacity:.66;font-size:10px;font-weight:800}.forecast-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}.forecast-metrics span{display:block}.forecast-metrics small{display:block;color:inherit;opacity:.72;font-size:10px;line-height:1.35}.forecast-metrics strong{display:block;margin-top:1px;color:inherit;font-size:17px;line-height:1.25;white-space:nowrap}.forecast-subtext{display:block;margin-top:9px;color:inherit;font-size:11px;line-height:1.5}
+</style>
+<style>
+.forecast-table-card{margin-top:13px;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--surface-soft)}.forecast-table-title{padding:11px 14px;color:var(--muted);font-size:13px;font-weight:900}.forecast-table-row{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:10px;align-items:center;padding:11px 14px;border-top:1px solid var(--line);font-size:12px}.forecast-table-row span:not(:first-child){text-align:right;font-weight:850}.forecast-table-row.header{color:var(--orange-dark);font-size:11px;font-weight:900}.forecast-table-row.header span:not(:first-child){font-weight:900}.forecast-table-row b{color:var(--ink);font-size:13px}.forecast-callout{margin:10px 0 0;border-left:4px solid var(--orange);border-radius:12px;padding:10px 12px;color:#6f4732;background:var(--orange-soft);font-size:11px;line-height:1.6}.forecast-callout b{color:#6f4732}
+</style>
+</head>
+<body>
+  <nav>
+<a class="brand" href="#top">
+<span class="brand-mark">DH</span>
+<span>Delivery Hero 财报看板</span>
+</a>
+<div class="nav-links">
+<a href="#topline">Topline</a>
+<a href="#bottomline">Bottomline</a>
+<a href="#terms">术语</a>
+<a href="#sources">来源</a>
+</div>
+</nav>
+  <main id="top">
+    <section class="hero">
+<div class="hero-main">
+<span class="eyebrow">Delivery Hero SE</span>
+<h1>Delivery Hero 财报看板</h1>
+<h3>收入增长快于交易规模，即时零售和广告带动收入增长。</h3>
+<ul>
+<li><b>Topline：</b>2026Q1 总收入按可比口径增长 17.8%，快于 GMV 的 8.8%；即时零售 GMV 占比升至 18%，按可比口径增长 30%。</li>
+<li><b>Bottomline：</b>FY2025 Adjusted EBITDA 为 9.03 亿欧元、利润率为 1.8%；FY2026 指引为 9.10 亿至 9.60 亿欧元。2026Q1 未披露单季利润。</li>
+</ul>
+</div>
+<aside class="hero-side">
+<div>
+<small>券商核心观点</small>
+<h2>券商预测 FY2026 Adjusted EBITDA 位于公司指引区间中上部。</h2>
+<p>UBS 将 FY2026 Adjusted EBITDA 预测上调至 9.50 亿欧元；J.P. Morgan 认为管理层重申指引有望带动市场一致预期小幅至中个位数上调，同时提示潜在交易的欧洲竞争审查风险。</p>
+</div>
+<div class="hero-metrics">
+<div><strong>3.728bn</strong><span>2026Q1 总收入，€</span></div>
+<div><strong>12.467bn</strong><span>2026Q1 GMV，€</span></div>
+
+<div><strong>910–960m</strong><span>FY2026 Adjusted EBITDA 指引，€</span></div>
+</div>
+</aside>
+</section>
+    <p class="fy-note">货币和金额均为欧元百万。前台采用统一可比口径；历史收入按 FY2026 起统一后的口径展示。</p>
+
+    <section id="topline">
+<div class="section-title">
+<h2>Topline</h2>
+<p>MENA 和美洲 GMV 增长较快；即时零售和广告带动收入增长。</p>
+</div>
+<div class="grid-2">
+<article class="chart-card" data-chart="group-topline">
+<span class="data-label">财务数据</span>
+<h3>集团总收入与 GMV</h3>
+<svg id="toplineMain" class="chart" data-chart="group-topline" role="img" aria-label="集团总收入与 GMV 趋势图">
+</svg>
+<div class="legend">
+<span>
+<i style="background:var(--green)">
+</i>总收入（左轴，€m）</span>
+<span>
+<i style="background:var(--blue)">
+</i>GMV（左轴，€m）</span>
+
+</div>
+<p class="source-note">来源：公司 Trading Update；收入均采用统一后口径。</p>
+<div class="forecast-table-card"><div class="forecast-table-title">FY2026 增长指引与预测（可比口径）</div><div class="forecast-table-row header"><span>来源</span><span>GMV</span><span>总收入</span></div><div class="forecast-table-row"><b>公司指引</b><span>+8%–10%</span><span>+14%–16%</span></div><div class="forecast-table-row"><b>UBS 预测</b><span>+9.9%</span><span>+15.4%</span></div></div>
+<p class="forecast-callout"><b>UBS 观点：</b>其预计 GMV 与收入增速均落在公司 FY2026 指引区间内。区域上，MENA 和美洲的增长可部分抵消亚洲压力。</p>
+</article>
+<article class="analysis">
+<span class="data-label">驱动因素与核心洞察</span>
+<h3>收入增速高于 GMV，即时零售、广告和地区增长共同带动</h3>
+<div class="analysis-list">
+<div class="analysis-item">
+<b>收入按可比口径增长 17.8%，快于 GMV 的 8.8%</b>
+<span class="view-label">公司披露</span>
+<p>2026Q1 总收入为 37.277 亿欧元，GMV 为 124.666 亿欧元；收入按可比口径增长 17.8%，GMV 增长 8.8%。</p>
+</div>
+<div class="analysis-item">
+<b>即时零售带动杂货和日用品等业务增长</b>
+<span class="view-label">公司披露</span>
+<p>即时零售占集团 GMV 的 18%，同比提高 3 个百分点、按可比口径增长 30%；公司将其视为从餐饮外卖扩展到杂货和日用品等业务的增长来源。</p>
+</div>
+<div class="analysis-item">
+<b>Integrated Verticals GMV 为 9.92 亿欧元，广告带动收入增长</b>
+<span class="view-label">公司披露</span>
+<p>Integrated Verticals 的 GMV 按可比口径增长 28% 至 9.917 亿欧元，分部收入增长 32% 至 9.361 亿欧元。公司称 AdTech 表现带动收入增长，零售媒体年化收入已超过 1 亿欧元，并正推进 Dmart 网络扩张。</p>
+</div>
+<div class="analysis-item">
+<b>订单量增长 10%，平台展示超过 6,000 万月活用户</b>
+<span class="view-label">公司披露</span>
+<p>2026Q1 订单量为 9.08 亿单，按可比口径同比增长 10%，高于 GMV 的 8.8%。公司在本期材料中展示，平台覆盖超过 6,000 万月活用户、150 万以上商家和 800 家以上 Dmart。</p>
+</div>
+<div class="analysis-item">
+<b>订阅、多垂类使用和关键词广告均有增长</b>
+<span class="view-label">公司披露</span>
+<p>使用两个及以上垂类的用户贡献集团 GMV 的 55%（不含 Woowa）；订阅用户贡献 43%，同比提高 11 个百分点。关键词广告收入同比增长 170% 至 5,200 万欧元；餐厅端骑手等待时间同比下降 8%。</p>
+</div>
+</div>
+</article>
+</div>
+<div class="grid-2" style="margin-top:18px">
+<article class="chart-card compact" data-chart="regional-switcher">
+<span class="data-label">地区结构</span>
+<h3 id="regionalChartTitle">分地区收入趋势</h3>
+<div class="chart-toolbar" aria-label="分地区图表切换">
+<button type="button" data-regional-view="revenue" aria-pressed="true">分地区收入</button>
+<button type="button" data-regional-view="gmv" aria-pressed="false">分地区 GMV</button>
+</div>
+<svg id="regionalChart" class="chart" data-chart="regional-switcher" role="img" aria-label="分地区收入趋势图">
+</svg>
+<div id="regionalLegend" class="legend"></div>
+<p id="regionalNote" class="source-note">来源：公司 Trading Update；各柱为已披露区域平台分部收入。</p>
+</article>
+<article class="analysis">
+<span class="data-label">驱动因素与核心洞察</span>
+<h3>分地区增长：MENA 和美洲较快，亚洲较慢</h3>
+<div class="analysis-list">
+<div class="analysis-item">
+<b>MENA 2026Q1 GMV 增长 16%，沙特增长 24%</b>
+<span class="view-label">公司披露</span>
+<p>MENA GMV 为 38.285 亿欧元，按可比口径增长 16%；其中沙特增长 24%，订阅用户贡献当地 GMV 的 61%。</p>
+</div>
+<div class="analysis-item">
+<b>亚洲 2026Q1 GMV 增长 3%，韩国配送和即时零售扩张带动收入与订单</b>
+<span class="view-label">公司披露</span>
+<p>亚洲 GMV 为 49.157 亿欧元，按可比口径增长 3%。韩国自配送业务扩张带动收入增长；高价值订阅用户贡献当地 GMV 的约 50%，即时零售通过扩大商品选择和本地商户网络增加订单。</p>
+</div>
+<div class="analysis-item">
+<b>美洲 GMV 增长 18%，订单增长 25%</b>
+<span class="view-label">公司披露</span>
+<p>美洲 GMV 为 12.103 亿欧元，按可比口径增长 18%；15 个市场中 13 个增长超过 20%，订阅覆盖 37% 订单。即时零售增长 34%，AdTech 收入增长 33%。</p>
+</div>
+<div class="analysis-item">
+<b>欧洲 GMV 增长 7%，AdTech 收入增长 34%</b>
+<span class="view-label">公司披露</span>
+<p>欧洲 GMV 为 25.121 亿欧元，按可比口径增长 7%。公司正通过提高骑手利用率和缩短配送时间推动增长；AdTech 收入增长 34%。</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+    <section id="bottomline">
+<div class="section-title">
+<h2>Bottomline</h2>
+<p>FY2025 Adjusted EBITDA 已提高；2026Q1 未披露单季利润，FY2026 指引为 9.10 亿至 9.60 亿欧元。</p>
+</div>
+<div class="grid-2">
+<article class="chart-card" data-chart="bottomline-main">
+<span class="data-label">财务数据</span>
+<h3>Adjusted EBITDA、经营利润与 Adjusted EBITDA/GMV</h3>
+<svg id="bottomlineMain" class="chart" data-chart="bottomline-main" role="img" aria-label="Adjusted EBITDA、经营利润及Adjusted EBITDA GMV比率">
+</svg>
+<div class="legend">
+<span>
+<i style="background:var(--green)">
+</i>Adjusted EBITDA（左轴，€m）</span>
+<span>
+<i style="background:var(--purple)">
+</i>经营利润（左轴，€m）</span>
+<span>
+<i style="background:var(--orange)">
+</i>Adjusted EBITDA/GMV（右轴，%）</span>
+</div>
+<p class="source-note">来源：公司 2025H1、FY2025 披露；2025H2 标记为“计算”，由 FY2025 与 2025H1 的已披露值计算。2026Q1 单季实际值未披露，未绘制。</p>
+<div class="forecast-table-card"><div class="forecast-table-title">FY2026 Adjusted EBITDA 指引与预测（亿欧元）</div><div class="forecast-table-row header"><span>来源</span><span>Adjusted EBITDA</span><span>说明</span></div><div class="forecast-table-row"><b>公司指引</b><span>9.10–9.60</span><span>区间上半部</span></div><div class="forecast-table-row"><b>UBS 预测</b><span>9.50</span><span>券商预测</span></div><div class="forecast-table-row"><b>市场一致预期</b><span>9.39</span><span>J.P. Morgan 列示</span></div></div>
+</article>
+<article class="analysis">
+<span class="data-label">驱动因素与核心洞察</span>
+<h3>FY2025 利润率已提升，2026Q1 未披露单季利润</h3>
+<div class="analysis-list">
+<div class="analysis-item">
+<b>FY2025 Adjusted EBITDA 升至 9.03 亿欧元，利润率升至 1.8%</b>
+<span class="view-label">公司披露</span>
+<p>2025H1 Adjusted EBITDA 为 4.107 亿欧元、EBITDA/GMV 为 1.7%；FY2025 为 9.03 亿欧元、1.8%，较 FY2024 的 1.4% 提升 40 个基点，历史趋势反映盈利能力改善。</p>
+</div>
+<div class="analysis-item">
+<b>2026Q1 未披露单季利润，公司维持全年 EBITDA 指引</b>
+<span class="view-label">公司披露</span>
+<p>2026Q1 材料未披露 Adjusted EBITDA、Adjusted EBITDA/GMV 或经营利润实际值；公司重申 FY2026 Adjusted EBITDA 9.10 亿至 9.60 亿欧元指引。因此，本期不能根据单季数据判断利润率。</p>
+</div>
+<div class="analysis-item">
+<b>管理层预计上半年投入后，下半年利润增长加快</b>
+<span class="view-label">公司披露</span>
+<p>公司披露 2026 年上半年的投入重点涉及即时零售、韩国和 MENA；管理层预计下半年利润增长将加快，并以此支撑 FY2026 Adjusted EBITDA 落在指引区间上半部。</p>
+</div>
+<div class="analysis-item">
+<b>UBS 上调 MENA 和美洲预测，下调亚洲预测</b>
+<span class="view-label">券商观点</span>
+<p>UBS 将 FY2026 Adjusted EBITDA 预测上调至 9.50 亿欧元：亚洲预测下调由 MENA 与美洲上调抵消；J.P. Morgan 认为市场一致预期可能获得小幅至中个位数上调。</p>
+</div>
+</div>
+</article>
+</div>
+<div class="grid-2" style="margin-top:18px">
+<article class="chart-card compact" data-chart="regional-ebitda">
+<span class="data-label">地区结构</span>
+<h3>分地区 Adjusted EBITDA</h3>
+<svg id="regionalEbitda" class="chart" data-chart="regional-ebitda" role="img" aria-label="分地区Adjusted EBITDA对比图">
+</svg>
+<div class="legend">
+<span>
+<i style="background:#00966b">
+</i>欧洲</span>
+<span>
+<i style="background:#f05a24">
+</i>MENA</span>
+<span>
+<i style="background:#2f7890">
+</i>亚洲</span>
+<span>
+<i style="background:#9b4fb3">
+</i>美洲</span>
+</div>
+<p class="source-note">来源：公司 2025H1 与 FY2025 披露；2025H2 按 FY2025 减 2025H1 计算。</p>
+</article>
+<article class="analysis">
+<span class="data-label">驱动因素与核心洞察</span>
+<h3>地区盈利：MENA 贡献最大，欧洲仍亏损</h3>
+<div class="analysis-list">
+<div class="analysis-item">
+<b>FY2025 MENA Adjusted EBITDA 为 5.460 亿欧元，居各地区首位</b>
+<span class="view-label">公司披露</span>
+<p>FY2025 MENA 是四个区域中 Adjusted EBITDA 最高的地区；2026Q1 Adjusted EBITDA/GMV 同比提高 60 个基点。</p>
+</div>
+<div class="analysis-item">
+<b>FY2025 欧洲 Adjusted EBITDA 为负 0.792 亿欧元</b>
+<span class="view-label">公司披露</span>
+<p>欧洲是四个区域中唯一 FY2025 Adjusted EBITDA 为负的地区；公司称西班牙骑手模式转型仍影响经营效率。</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+    <section id="terms">
+<div class="section-title">
+<h2>术语与口径</h2>
+<p>金额与交易规模均以欧元百万计；以下说明只覆盖读图所需的统一可比口径与计算边界。</p>
+</div>
+<div class="terms">
+<article>
+<b>统一可比口径</b>
+<p>FY2026 起收入按扣除券、退款等收入抵减后的统一口径列示；历史收入已同步按该口径展示，以保持趋势可比。</p>
+</article>
+<article>
+<b>GMV</b>
+<p>集团交易总额。区域 GMV 图采用区域平台口径，避免与集团总额重复计算。</p>
+</article>
+<article>
+<b>Everyday App</b>
+<p>从餐饮外卖扩展到杂货、家庭日用品和便利消费等业务；公司希望增加用户在平台的使用频次。</p>
+</article>
+<article>
+<b>Dmart</b>
+<p>Delivery Hero 自营的即时零售配送站点，用于储存和配送杂货、日用品等商品。</p>
+</article>
+</div>
+</section>
+
+    <section id="sources">
+<div class="section-title">
+<h2>来源</h2>
+<p>公司披露用于指标与解读，券商材料仅用于标注的观点与预测。</p>
+</div>
+<div class="source-grid">
+<article class="source-card">
+<span class="source-type">公司披露</span>
+<b>财报、电话会与历史披露</b>
+<p>汇集本期 Trading Update、公司演示与历史业绩披露，用于集团及地区指标、经营解读、口径核对与历史趋势。</p>
+<div class="source-links">
+<a href="assets/sources/Delivery_Hero_Q1_2026_Trading_Update.pdf" target="_blank" rel="noopener">2026Q1 更新 ↗</a>
+<a href="assets/sources/Delivery_Hero_FY_2025_Results.pdf" target="_blank" rel="noopener">FY2025 业绩 ↗</a>
+<a href="assets/sources/26-05-29_Company_Presentation.pdf" target="_blank" rel="noopener">公司演示 ↗</a>
+</div>
+</article>
+<article class="source-card">
+<span class="source-type">券商研报 · 预测与风险</span>
+<b>UBS 与 J.P. Morgan</b>
+<p>仅用于页面中明确标注为券商观点、预测及监管情景风险的内容。</p>
+<div class="source-links">
+<a href="assets/sources/Delivery%20Hero_%201Q26_%20Encouraging%20momentum_%20KSA%20a%20standout.pdf" target="_blank" rel="noopener">UBS 研报 ↗</a>
+<a href="assets/sources/Delivery%20Hero%20SE_%20A%20solid%20Q1_26_%20business%20on%20track%20while%20all%20eyes%20are%20on%20M_A%20scenarios....pdf" target="_blank" rel="noopener">J.P. Morgan 研报 ↗</a>
+</div>
+</article>
+</div>
+</section>
+  </main>
+<div class="chart-tooltip" id="chartTooltip" role="status" aria-live="polite">
+</div>
+<footer>
+<span>Delivery Hero 财报看板</span>
+<span>仅使用已确认分析底稿</span>
+</footer>
+  <script>
+  (()=>{
+    'use strict';
+    let regionalView='revenue';
+    const chartData={
+      hero:[['37.277 亿','2026Q1 总收入'],['124.666 亿','2026Q1 GMV'],['9.10–9.60 亿','FY2026 EBITDA 指引']],
+      topline:{periods:['2025Q1','2025Q2','2025Q3','2025Q4','2026Q1'],revenue:[3390.3,3489.3,3530.1,3649.9,3727.7],gmv:[12372.5,12243.4,12179.4,12401.5,12466.6]},
+      regionalRevenue:{periods:['2025Q1','2025Q2','2025Q3','2025Q4','2026Q1'],series:[{name:'欧洲',color:'#00966b',values:[604.1,617.8,582.7,652.1,646.1]},{name:'MENA',color:'#f05a24',values:[910.6,954.7,949.9,962.8,954.6]},{name:'亚洲',color:'#2f7890',values:[981.7,1034.5,1072.2,1019.3,1025.2]},{name:'美洲',color:'#9b4fb3',values:[242.9,228.4,231.3,274.8,293.6]}]},
+      regionalGmv:{periods:['2025Q1','2025Q2','2025Q3','2025Q4','2026Q1'],series:[{name:'欧洲',color:'#00966b',values:[2385.2,2422.7,2345.2,2540,2512.1]},{name:'MENA',color:'#f05a24',values:[3548,3690.4,3664,3741.9,3828.5]},{name:'亚洲',color:'#2f7890',values:[5414.9,5176.9,5209.6,4978.4,4915.7]},{name:'美洲',color:'#9b4fb3',values:[1024.4,953.5,960.6,1141.2,1210.3]}]},
+      bottomline:{periods:['2025H1','2025H2（计算）','FY2025'],ebitda:[410.7,492.3,903],ebit:[4.7,-158.7,-154],rate:[1.7,2,1.8]},
+      regionalEbitda:{periods:['2025H1','2025H2（计算）','FY2025'],series:[{name:'欧洲',color:'#00966b',values:[-50.8,-28.4,-79.2]},{name:'MENA',color:'#f05a24',values:[256.2,289.8,546]},{name:'亚洲',color:'#2f7890',values:[176.3,156.8,333.1]},{name:'美洲',color:'#9b4fb3',values:[46.2,53.8,100]}]}
+    };
+    const NS='http://www.w3.org/2000/svg',tooltip=document.getElementById('chartTooltip');
+    const fmt=n=>new Intl.NumberFormat('zh-CN',{maximumFractionDigits:1}).format(n);
+    const node=(tag,attrs={},text='')=>{const el=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));if(text)el.textContent=text;return el};
+    const htmlNode=(tag,attrs={},text='')=>{const el=document.createElement(tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));el.textContent=text;return el};
+    const clear=svg=>{while(svg.firstChild)svg.removeChild(svg.firstChild)};
+    const showTip=(event,lines)=>{tooltip.textContent=lines.join('\n');tooltip.style.display='block';tooltip.style.left=Math.min(event.clientX+14,window.innerWidth-350)+'px';tooltip.style.top=Math.min(event.clientY+14,window.innerHeight-120)+'px'};
+    const hideTip=()=>{tooltip.style.display='none'};
+    const bindTip=(el,lines)=>{el.setAttribute('tabindex','0');el.setAttribute('role','img');el.addEventListener('pointerenter',e=>showTip(e,lines));el.addEventListener('pointermove',e=>showTip(e,lines));el.addEventListener('pointerleave',hideTip);el.addEventListener('focus',()=>{const r=el.getBoundingClientRect();showTip({clientX:r.left+r.width/2,clientY:r.top},lines)});el.addEventListener('blur',hideTip)};
+    const grid=(svg,w,h,m,max,min=0,rightRange=null)=>{const p=h-m.b-m.t;for(let i=0;i<=4;i++){const y=m.t+p*i/4;const value=max-(max-min)*i/4;svg.append(node('line',{x1:m.l,y1:y,x2:w-m.r,y2:y,stroke:'#e7d7c8','stroke-width':1}));svg.append(node('text',{x:m.l-8,y:y+4,'text-anchor':'end',fill:'#8b7e73','font-size':10},fmt(value)));if(rightRange){const rightValue=rightRange.max-(rightRange.max-rightRange.min)*i/4;svg.append(node('text',{x:w-m.r+8,y:y+4,fill:'#c9340a','font-size':10},rightValue.toFixed(1)+'%'))}}return p};
+    const labelX=(svg,periods,w,h,m)=>periods.forEach((v,i)=>svg.append(node('text',{x:m.l+(w-m.l-m.r)*(i+.5)/periods.length,y:h-12,'text-anchor':'middle',fill:'#5c5148','font-size':10},v)));
+    const combo=(id,data,defs)=>{const svg=document.getElementById(id);clear(svg);const r=svg.getBoundingClientRect(),w=Math.max(300,Math.floor(r.width)),h=Math.max(250,Math.floor(r.height)),m={l:44,r:38,t:18,b:38},barValues=defs.bars.flatMap(x=>x.values),max=Math.ceil(Math.max(...barValues)/100)*100,min=Math.min(0,Math.floor(Math.min(...barValues)/100)*100),minR=Math.floor(Math.min(...defs.line.values))-1,maxR=Math.ceil(Math.max(...defs.line.values))+1,p=grid(svg,w,h,m,max,min,{min:minR,max:maxR}),step=(w-m.l-m.r)/data.periods.length,baseline=m.t+p*(1-(0-min)/(max-min));defs.bars.forEach((s,si)=>s.values.forEach((v,i)=>{const bw=Math.min(20,step/(defs.bars.length+1)),x=m.l+step*i+step*.5+(si-(defs.bars.length-1)/2)*(bw+3)-bw/2,y=m.t+p*(1-(v-min)/(max-min)),bar=node('rect',{x,y:Math.min(y,baseline),width:bw,height:Math.abs(baseline-y),rx:3,fill:s.color});bindTip(bar,[data.periods[i],s.name,fmt(v)+' €m']);svg.append(bar)}));if(min<0)svg.append(node('line',{x1:m.l,y1:baseline,x2:w-m.r,y2:baseline,stroke:'#8b7e73','stroke-width':1.2}));const d=defs.line.values.map((v,i)=>`${i?'L':'M'} ${m.l+step*(i+.5)} ${m.t+p*(1-(v-minR)/(maxR-minR))}`).join(' ');svg.append(node('path',{d,fill:'none',stroke:defs.line.color,'stroke-width':3}));defs.line.values.forEach((v,i)=>{const x=m.l+step*(i+.5),y=m.t+p*(1-(v-minR)/(maxR-minR)),dot=node('circle',{cx:x,cy:y,r:4.5,fill:defs.line.color,stroke:'#fffdf8','stroke-width':2});bindTip(dot,[data.periods[i],defs.line.name,v.toFixed(1)+'%']);svg.append(dot)});labelX(svg,data.periods,w,h,m)};
+    const grouped=(id,data)=>{const svg=document.getElementById(id);clear(svg);const r=svg.getBoundingClientRect(),w=Math.max(300,Math.floor(r.width)),h=Math.max(240,Math.floor(r.height)),m={l:44,r:14,t:18,b:38},all=data.series.flatMap(s=>s.values),max=Math.ceil(Math.max(...all)/100)*100,min=Math.min(0,Math.floor(Math.min(...all)/100)*100),p=grid(svg,w,h,m,max,min),step=(w-m.l-m.r)/data.periods.length,bw=Math.max(5,Math.min(17,step/(data.series.length+1)));data.series.forEach((s,si)=>s.values.forEach((v,i)=>{const baseline=m.t+p*(1-(0-min)/(max-min)),y=m.t+p*(1-(v-min)/(max-min)),x=m.l+step*i+step*.5+(si-(data.series.length-1)/2)*(bw+2)-bw/2,bar=node('rect',{x,y:Math.min(y,baseline),width:bw,height:Math.abs(baseline-y),rx:2,fill:s.color});bindTip(bar,[data.periods[i],s.name,fmt(v)+' €m']);svg.append(bar)}));if(min<0)svg.append(node('line',{x1:m.l,y1:m.t+p*(1-(0-min)/(max-min)),x2:w-m.r,y2:m.t+p*(1-(0-min)/(max-min)),stroke:'#8b7e73','stroke-width':1.2}));labelX(svg,data.periods,w,h,m)};
+    const renderRegional=()=>{const isRevenue=regionalView==='revenue',data=isRevenue?chartData.regionalRevenue:chartData.regionalGmv;grouped('regionalChart',data);document.getElementById('regionalChartTitle').textContent=isRevenue?'分地区收入趋势':'分地区 GMV 趋势';document.getElementById('regionalChart').setAttribute('aria-label',isRevenue?'分地区收入趋势图':'分地区 GMV 趋势图');document.getElementById('regionalLegend').innerHTML=data.series.map(item=>`<span><i style="background:${item.color}"></i>${item.name}</span>`).join('');document.getElementById('regionalNote').textContent=isRevenue?'来源：公司 Trading Update；各柱为已披露区域平台分部收入。':'来源：公司 Trading Update；各柱为已披露区域平台 GMV。'};
+    const render=()=>{grouped('toplineMain',{periods:chartData.topline.periods,series:[{name:'总收入',color:'#00966b',values:chartData.topline.revenue},{name:'GMV',color:'#2f7890',values:chartData.topline.gmv}]});renderRegional();combo('bottomlineMain',chartData.bottomline,{bars:[{name:'Adjusted EBITDA',color:'#00966b',values:chartData.bottomline.ebitda},{name:'经营利润',color:'#9b4fb3',values:chartData.bottomline.ebit}],line:{name:'Adjusted EBITDA/GMV',color:'#f05a24',values:chartData.bottomline.rate}});grouped('regionalEbitda',chartData.regionalEbitda)};
+    window.addEventListener('load',()=>{document.querySelectorAll('[data-regional-view]').forEach(button=>button.addEventListener('click',()=>{regionalView=button.dataset.regionalView;document.querySelectorAll('[data-regional-view]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));renderRegional()}));render()});window.addEventListener('resize',()=>{window.clearTimeout(window.__dhResize);window.__dhResize=window.setTimeout(render,120)});
+  })();
+  </script>
+
+</body>
+</html>
